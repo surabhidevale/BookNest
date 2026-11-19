@@ -1,0 +1,379 @@
+{% extends 'CoreApp/base.html' %}
+
+{% block content %}
+
+<!-- Contact Hero -->
+<section style="
+    background: #faf7f2;
+    padding: 70px 20px;
+">
+    <div style="
+        max-width: 900px;
+        margin: auto;
+        text-align: center;
+    ">
+
+        <p style="
+            color: #9b6f2f;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        ">
+            GET IN TOUCH
+        </p>
+
+        <h1 style="
+            font-family: Georgia, serif;
+            color: #35161b;
+            font-size: 52px;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        ">
+            We'd love to hear from you.
+        </h1>
+
+        <p style="
+            max-width: 650px;
+            margin: auto;
+            color: #6f6662;
+            font-size: 17px;
+            line-height: 1.8;
+        ">
+            Have a question about a book, an order, a rental,
+            or our bookstore? Get in touch with the BookNest team.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- Contact Information -->
+<section style="
+    background: #ffffff;
+    padding: 80px 20px;
+">
+    <div style="
+        max-width: 1100px;
+        margin: auto;
+        display: flex;
+        gap: 50px;
+        flex-wrap: wrap;
+        align-items: stretch;
+    ">
+
+        <!-- Contact Details -->
+        <div style="
+            flex: 1 1 420px;
+            background: #faf7f2;
+            border-radius: 20px;
+            padding: 40px;
+        ">
+
+            <p style="
+                color: #9b6f2f;
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: 2.5px;
+                margin-bottom: 10px;
+            ">
+                CONTACT INFORMATION
+            </p>
+
+            <h2 style="
+                font-family: Georgia, serif;
+                color: #35161b;
+                font-size: 36px;
+                margin-bottom: 30px;
+            ">
+                Visit or reach us
+            </h2>
+
+
+            <!-- Phone -->
+            <div style="
+                display: flex;
+                gap: 18px;
+                margin-bottom: 25px;
+            ">
+                <div style="
+                    width: 48px;
+                    height: 48px;
+                    flex-shrink: 0;
+                    background: #f0e0d0;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 22px;
+                ">
+                    📞
+                </div>
+
+                <div>
+                    <h4 style="
+                        color: #35161b;
+                        font-size: 17px;
+                        margin-bottom: 5px;
+                    ">
+                        Call Us
+                    </h4>
+
+                    <p style="
+                        color: #6f6662;
+                        margin: 0;
+                    ">
+                        +9349520992
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- Email -->
+            <div style="
+                display: flex;
+                gap: 18px;
+                margin-bottom: 25px;
+            ">
+                <div style="
+                    width: 48px;
+                    height: 48px;
+                    flex-shrink: 0;
+                    background: #f0e0d0;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 22px;
+                ">
+                    ✉️
+                </div>
+
+                <div>
+                    <h4 style="
+                        color: #35161b;
+                        font-size: 17px;
+                        margin-bottom: 5px;
+                    ">
+                        Email
+                    </h4>
+
+                    <p style="
+                        color: #6f6662;
+                        margin: 0;
+                    ">
+                        booknest12@gmail.com
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- Address -->
+            <div style="
+                display: flex;
+                gap: 18px;
+            ">
+                <div style="
+                    width: 48px;
+                    height: 48px;
+                    flex-shrink: 0;
+                    background: #f0e0d0;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 22px;
+                ">
+                    📍
+                </div>
+
+                <div>
+                    <h4 style="
+                        color: #35161b;
+                        font-size: 17px;
+                        margin-bottom: 5px;
+                    ">
+                        Store Location
+                    </h4>
+
+                    <p style="
+                        color: #6f6662;
+                        margin: 0;
+                    ">
+                        Koregaon-Park,Pune-23
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Contact Form -->
+        <div style="
+            flex: 1 1 480px;
+            padding: 10px;
+        ">
+
+            <p style="
+                color: #9b6f2f;
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: 2.5px;
+                margin-bottom: 10px;
+            ">
+                SEND A MESSAGE
+            </p>
+
+            <h2 style="
+                font-family: Georgia, serif;
+                color: #35161b;
+                font-size: 36px;
+                margin-bottom: 25px;
+            ">
+                How can we help?
+            </h2>
+
+            <form>
+
+                <div style="margin-bottom: 18px;">
+                    <label style="
+                        display: block;
+                        color: #35161b;
+                        font-weight: 600;
+                        margin-bottom: 7px;
+                    ">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        placeholder="Enter your name"
+                        style="
+                            width: 100%;
+                            padding: 13px 15px;
+                            border: 1px solid #ddd1c8;
+                            border-radius: 8px;
+                            outline: none;
+                            box-sizing: border-box;
+                        "
+                    >
+                </div>
+
+
+                <div style="margin-bottom: 18px;">
+                    <label style="
+                        display: block;
+                        color: #35161b;
+                        font-weight: 600;
+                        margin-bottom: 7px;
+                    ">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                        style="
+                            width: 100%;
+                            padding: 13px 15px;
+                            border: 1px solid #ddd1c8;
+                            border-radius: 8px;
+                            outline: none;
+                            box-sizing: border-box;
+                        "
+                    >
+                </div>
+
+
+                <div style="margin-bottom: 18px;">
+                    <label style="
+                        display: block;
+                        color: #35161b;
+                        font-weight: 600;
+                        margin-bottom: 7px;
+                    ">
+                        Message
+                    </label>
+
+                    <textarea
+                        rows="5"
+                        placeholder="Write your message..."
+                        style="
+                            width: 100%;
+                            padding: 13px 15px;
+                            border: 1px solid #ddd1c8;
+                            border-radius: 8px;
+                            outline: none;
+                            resize: vertical;
+                            box-sizing: border-box;
+                        "
+                    ></textarea>
+                </div>
+
+
+                <button
+                    type="submit"
+                    style="
+                        background: #7a1f2b;
+                        color: white;
+                        border: none;
+                        padding: 13px 25px;
+                        border-radius: 7px;
+                        font-weight: 600;
+                        cursor: pointer;
+                    "
+                >
+                    Send Message →
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Store Section -->
+<section style="
+    background: #faf7f2;
+    padding: 70px 20px;
+">
+    <div style="
+        max-width: 1100px;
+        margin: auto;
+        text-align: center;
+    ">
+
+        <p style="
+            color: #9b6f2f;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        ">
+            VISIT BOOKNEST
+        </p>
+
+        <h2 style="
+            font-family: Georgia, serif;
+            color: #35161b;
+            font-size: 40px;
+            margin-bottom: 15px;
+        ">
+            More than an online bookstore.
+        </h2>
+
+        <p style="
+            max-width: 650px;
+            margin: auto;
+            color: #6f6662;
+            line-height: 1.8;
+        ">
+            BookNest also has a physical bookstore where readers
+            can browse, discover and exchange books.
+        </p>
+
+    </div>
+</section>
+
+{% endblock %}

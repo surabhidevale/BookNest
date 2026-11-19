@@ -1,0 +1,170 @@
+{% extends 'CoreApp/base.html' %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8 col-lg-7">
+
+            <div class="card border-0 shadow">
+
+                <!-- Chat Header -->
+                <div class="card-header border-0 p-4"
+                     style="background: #6f4e37; color: white;">
+
+                    <div class="d-flex align-items-center">
+
+                        <div class="rounded-circle bg-white text-dark
+                                    d-flex align-items-center justify-content-center me-3"
+                             style="width: 45px; height: 45px;">
+
+                            💬
+
+                        </div>
+
+                        <div>
+
+                            <h5 class="mb-0">
+                                {% if user == seller %}
+                                    Chat about {{ book.title }}
+                                {% else %}
+                                    Chat with {{ seller.username }}
+                                {% endif %}
+                            </h5>
+
+                            <small style="opacity: 0.85;">
+                                {{ book.title }}
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Messages Area -->
+                <div class="card-body"
+                     style="height: 450px; overflow-y: auto; background: #faf7f3;">
+
+                    {% if messages %}
+
+                        {% for msg in messages %}
+
+                            {% if msg.sender == user %}
+
+                                <!-- My Message -->
+                                <div class="d-flex justify-content-end mb-3">
+
+                                    <div class="text-end">
+
+                                        <div class="px-3 py-2 rounded-4"
+                                             style="background: #6f4e37;
+                                                    color: white;
+                                                    max-width: 320px;
+                                                    display: inline-block;
+                                                    text-align: left;">
+
+                                            {{ msg.message }}
+
+                                        </div>
+
+                                        <div class="small text-muted mt-1">
+                                            {{ msg.sent_at|date:"h:i A" }}
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            {% else %}
+
+                                <!-- Other User Message -->
+                                <div class="d-flex justify-content-start mb-3">
+
+                                    <div>
+
+                                        <div class="px-3 py-2 rounded-4 bg-white shadow-sm"
+                                             style="max-width: 320px;">
+
+                                            {{ msg.message }}
+
+                                        </div>
+
+                                        <div class="small text-muted mt-1">
+                                            {{ msg.sent_at|date:"h:i A" }}
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            {% endif %}
+
+                        {% endfor %}
+
+                    {% else %}
+
+                        <div class="text-center text-muted py-5">
+
+                            <div style="font-size: 40px;">
+                                💬
+                            </div>
+
+                            <h6 class="mt-3">
+                                Start a conversation
+                            </h6>
+
+                            <p class="small">
+                                Ask about this book, its condition,
+                                price or rental details.
+                            </p>
+
+                        </div>
+
+                    {% endif %}
+
+                </div>
+
+
+                <!-- Message Input -->
+                <div class="card-footer bg-white border-0 p-3">
+
+                    <form method="POST">
+
+                        {% csrf_token %}
+
+                        <div class="input-group">
+
+                            <input type="text"
+                                   name="message"
+                                   class="form-control rounded-start-pill"
+                                   placeholder="Type a message..."
+                                   autocomplete="off"
+                                   required>
+
+                            <button type="submit"
+                                    class="btn rounded-end-pill px-4"
+                                    style="background: #6f4e37; color: white;">
+
+                                Send
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

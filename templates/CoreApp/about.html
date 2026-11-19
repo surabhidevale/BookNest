@@ -1,0 +1,392 @@
+
+{% extends 'CoreApp/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- ABOUT HERO -->
+<section style="
+    background: #faf7f2;
+    padding: 70px 20px;
+">
+    <div style="
+        max-width: 1100px;
+        margin: auto;
+        text-align: center;
+    ">
+        <p style="
+            color: #9b6f2f;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        ">
+            ABOUT BOOKNEST
+        </p>
+
+        <h1 style="
+            font-family: Georgia, serif;
+            color: #35161b;
+            font-size: 52px;
+            line-height: 1.15;
+            margin: 0 0 18px;
+        ">
+            More than an online bookstore.
+        </h1>
+
+        <p style="
+            max-width: 650px;
+            margin: auto;
+            color: #6f6662;
+            font-size: 17px;
+            line-height: 1.8;
+        ">
+            BookNest is a place for readers to discover books,
+            explore used books, rent books and find their next
+            favourite story.
+        </p>
+    </div>
+</section>
+
+
+<!-- OUR STORY -->
+<section style="
+    background: #ffffff;
+    padding: 80px 20px;
+">
+    <div style="
+        max-width: 1100px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        flex-wrap: wrap;
+    ">
+
+        <!-- IMAGE -->
+        <div style="
+            flex: 1 1 480px;
+            max-width: 520px;
+        ">
+            <img
+                src="{% static 'CoreApp/images/booknest_interior.png' %}"
+                alt="BookNest bookstore interior"
+                style="
+                    width: 100%;
+                    height: 340px;
+                    object-fit: cover;
+                    border-radius: 22px;
+                    display: block;
+                    box-shadow: 0 15px 35px rgba(53,22,27,0.12);
+                "
+            >
+        </div>
+
+        <!-- TEXT -->
+        <div style="
+            flex: 1 1 400px;
+            min-width: 0;
+        ">
+
+            <p style="
+                color: #9b6f2f;
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: 3px;
+                margin-bottom: 12px;
+            ">
+                OUR STORY
+            </p>
+
+            <h2 style="
+                font-family: Georgia, serif;
+                color: #35161b;
+                font-size: 42px;
+                line-height: 1.2;
+                font-weight: 700;
+                margin: 0 0 22px;
+            ">
+                Books bring people
+                <span style="color: #7a1f2b;">
+                    together.
+                </span>
+            </h2>
+
+            <p style="
+                color: #6f6662;
+                font-family: Arial, sans-serif;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1.8;
+                margin: 0 0 18px;
+            ">
+                BookNest was created to make discovering and accessing
+                books simple and enjoyable. Whether you're looking for
+                a new book to read or want to give your old books a
+                second life, BookNest brings everything together in
+                one place.
+            </p>
+
+            <p style="
+                color: #6f6662;
+                font-family: Arial, sans-serif;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1.8;
+                margin: 0;
+            ">
+                Along with buying books, readers can explore used books,
+                rent books, create a wishlist, manage their cart and
+                keep track of their reading activities through their
+                account.
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- WHAT BOOKNEST OFFERS -->
+<section style="
+    background: #faf7f2;
+    padding: 80px 20px;
+">
+    <div style="
+        max-width: 1100px;
+        margin: auto;
+        text-align: center;
+    ">
+
+        <p style="
+            color: #9b6f2f;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        ">
+            WHAT WE OFFER
+        </p>
+
+        <h2 style="
+            font-family: Georgia, serif;
+            color: #35161b;
+            font-size: 40px;
+            margin-bottom: 45px;
+        ">
+            Everything for book lovers
+        </h2>
+
+        <div style="
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        ">
+
+            <div style="
+                background: #ffffff;
+                border: 1px solid #eee5df;
+                border-radius: 16px;
+                padding: 30px 25px;
+                width: 240px;
+            ">
+                <div style="font-size: 38px; margin-bottom: 15px;">
+                    📚
+                </div>
+
+                <h3 style="
+                    font-family: Georgia, serif;
+                    color: #35161b;
+                    font-size: 21px;
+                ">
+                    Buy Books
+                </h3>
+
+                <p style="
+                    color: #777;
+                    font-size: 14px;
+                    line-height: 1.6;
+                ">
+                    Discover books from different categories
+                    and add your favourites to your cart.
+                </p>
+            </div>
+
+
+            <div style="
+                background: #ffffff;
+                border: 1px solid #eee5df;
+                border-radius: 16px;
+                padding: 30px 25px;
+                width: 240px;
+            ">
+                <div style="font-size: 38px; margin-bottom: 15px;">
+                    ♻️
+                </div>
+
+                <h3 style="
+                    font-family: Georgia, serif;
+                    color: #35161b;
+                    font-size: 21px;
+                ">
+                    Used Books
+                </h3>
+
+                <p style="
+                    color: #777;
+                    font-size: 14px;
+                    line-height: 1.6;
+                ">
+                    Buy, sell or rent used books and
+                    give them another life.
+                </p>
+            </div>
+
+
+            <div style="
+                background: #ffffff;
+                border: 1px solid #eee5df;
+                border-radius: 16px;
+                padding: 30px 25px;
+                width: 240px;
+            ">
+                <div style="font-size: 38px; margin-bottom: 15px;">
+                    ❤️
+                </div>
+
+                <h3 style="
+                    font-family: Georgia, serif;
+                    color: #35161b;
+                    font-size: 21px;
+                ">
+                    Wishlist
+                </h3>
+
+                <p style="
+                    color: #777;
+                    font-size: 14px;
+                    line-height: 1.6;
+                ">
+                    Save books you love and easily
+                    find them again later.
+                </p>
+            </div>
+
+
+            <div style="
+                background: #ffffff;
+                border: 1px solid #eee5df;
+                border-radius: 16px;
+                padding: 30px 25px;
+                width: 240px;
+            ">
+                <div style="font-size: 38px; margin-bottom: 15px;">
+                    💬
+                </div>
+
+                <h3 style="
+                    font-family: Georgia, serif;
+                    color: #35161b;
+                    font-size: 21px;
+                ">
+                    Connect
+                </h3>
+
+                <p style="
+                    color: #777;
+                    font-size: 14px;
+                    line-height: 1.6;
+                ">
+                    Communicate with sellers about
+                    used books and rentals.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- PHYSICAL STORE -->
+<section style="
+    background: #ffffff;
+    padding: 80px 20px;
+">
+    <div style="
+        max-width: 1100px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        flex-wrap: wrap;
+    ">
+
+        <div style="
+            flex: 1 1 400px;
+        ">
+            <p style="
+                color: #9b6f2f;
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: 3px;
+                margin-bottom: 10px;
+            ">
+                VISIT BOOKNEST
+            </p>
+
+            <h2 style="
+                font-family: Georgia, serif;
+                color: #35161b;
+                font-size: 40px;
+                line-height: 1.2;
+                margin-bottom: 20px;
+            ">
+                A bookstore beyond the screen.
+            </h2>
+
+            <p style="
+                color: #6f6662;
+                font-size: 16px;
+                line-height: 1.8;
+            ">
+                BookNest also has a physical bookstore where
+                readers can browse books, discover new stories
+                and enjoy the experience of finding a book
+                in person.
+            </p>
+
+            <a href="{% url 'contact' %}"
+               style="
+                    display: inline-block;
+                    background: #7a1f2b;
+                    color: white;
+                    padding: 13px 24px;
+                    border-radius: 7px;
+                    text-decoration: none;
+                    font-weight: 600;
+                    margin-top: 10px;
+               ">
+                Visit & Contact Us →
+            </a>
+        </div>
+
+        <div style="
+            flex: 1 1 480px;
+        ">
+            <img
+                src="{% static 'CoreApp/images/booknest-store.png' %}"
+                alt="BookNest physical bookstore"
+                style="
+                    width: 100%;
+                    height: 330px;
+                    object-fit: cover;
+                    border-radius: 22px;
+                    display: block;
+                "
+            >
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}s

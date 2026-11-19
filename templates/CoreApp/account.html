@@ -1,0 +1,841 @@
+{% extends 'CoreApp/base.html' %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <!-- Account Header -->
+<div class="text-center mb-5">
+    <div style="
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 18px;
+        border-radius: 50%;
+        background: #f0e0d0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 38px;
+    ">
+        👤
+    </div>
+
+    <p style="
+        color: #9b6f2f;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        margin-bottom: 8px;
+    ">
+        MY ACCOUNT
+    </p>
+
+    <h2 style="
+        font-family: Georgia, serif;
+        color: #35161b;
+        font-size: 40px;
+        margin-bottom: 8px;
+    ">
+        Welcome back, {{ user.username }}!
+    </h2>
+
+    <p class="text-muted">
+        Manage your books, orders, rentals and conversations.
+    </p>
+</div>
+
+
+<!-- Account Information -->
+<div class="row justify-content-center mb-5">
+
+    <div class="col-lg-8">
+
+        <div class="card border-0 shadow-sm"
+             style="border-radius: 18px; overflow: hidden;">
+
+            <div style="
+                background: #35161b;
+                color: white;
+                padding: 22px 30px;
+            ">
+                <h5 class="mb-0">
+                    👤 Account Information
+                </h5>
+            </div>
+
+            <div class="card-body p-4 p-md-5">
+
+                <div class="row g-4">
+
+                    <div class="col-md-4">
+                        <small class="text-muted d-block mb-1">
+                            Username
+                        </small>
+
+                        <strong style="color: #35161b;">
+                            {{ user.username }}
+                        </strong>
+                    </div>
+
+                    <div class="col-md-4">
+                        <small class="text-muted d-block mb-1">
+                            Email
+                        </small>
+
+                        <strong style="color: #35161b;">
+                            {{ user.email }}
+                        </strong>
+                    </div>
+
+                    <div class="col-md-4">
+                        <small class="text-muted d-block mb-1">
+                            Member Since
+                        </small>
+
+                        <strong style="color: #35161b;">
+                            {{ user.date_joined|date:"d M Y" }}
+                        </strong>
+                    </div>
+
+                </div>
+
+                <hr class="my-4">
+
+                <div class="d-flex gap-2 flex-wrap">
+
+                    <a href="{% url 'books' %}"
+                       class="btn btn-brown">
+                        📚 Browse Books
+                    </a>
+
+                    <a href="{% url 'logout' %}"
+                       class="btn btn-outline-brown">
+                        Logout
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- My Listings -->
+
+    <div class="mb-4">
+
+       <!-- My Listings -->
+<div class="mb-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <p style="
+                color: #9b6f2f;
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: 2px;
+                margin-bottom: 5px;
+            ">
+                YOUR BOOKS
+            </p>
+
+            <h3 style="
+                font-family: Georgia, serif;
+                color: #35161b;
+                margin: 0;
+            ">
+                My Listings
+            </h3>
+        </div>
+
+        <a href="{% url 'add_used_book' %}"
+           class="btn btn-brown">
+            + Add Book
+        </a>
+    </div>
+
+    {% if my_listings %}
+
+        <div class="row g-4">
+
+            {% for book in my_listings %}
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card border-0 shadow-sm h-100"
+                         style="
+                            border-radius: 18px;
+                            overflow: hidden;
+                         ">
+
+                        <!-- Book Image -->
+                        <div style="
+                            height: 260px;
+                            background: #faf7f2;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        ">
+                            <img src="{{ book.image.url }}"
+                                 alt="{{ book.title }}"
+                                 style="
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                 ">
+                        </div>
+
+                        <div class="card-body p-4">
+
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+
+                                <h5 style="
+                                    font-family: Georgia, serif;
+                                    color: #35161b;
+                                    margin: 0;
+                                ">
+                                    {{ book.title }}
+                                </h5>
+
+                                <span style="
+                                    background: #f0e0d0;
+                                    color: #7a1f2b;
+                                    padding: 5px 10px;
+                                    border-radius: 20px;
+                                    font-size: 11px;
+                                    font-weight: 600;
+                                ">
+                                    {{ book.listing_type }}
+                                </span>
+
+                            </div>
+
+                            <p class="text-muted small mb-2">
+                                by {{ book.author }}
+                            </p>
+
+                            <p class="mb-3">
+                                <strong style="color: #35161b;">
+                                    ₹{{ book.price }}
+                                </strong>
+
+                                <span class="text-muted small ms-2">
+                                    • {{ book.condition }}
+                                </span>
+                            </p>
+
+                            <p class="text-muted small mb-3">
+                                {{ book.description|truncatewords:18 }}
+                            </p>
+
+                            {% if book.listing_type == 'Rent' %}
+
+                                {% for rental in my_listing_rentals %}
+
+                                    {% if rental.used_book.id == book.id %}
+
+                                        <div style="
+                                            background: #faf7f2;
+                                            border-radius: 12px;
+                                            padding: 12px;
+                                            margin-bottom: 12px;
+                                        ">
+
+                                            <small class="text-muted d-block">
+                                                Rented by
+                                            </small>
+
+                                            <strong style="color: #35161b;">
+                                                {{ rental.renter.username }}
+                                            </strong>
+
+                                            <small class="text-muted d-block mt-1">
+                                                Status: {{ rental.status }}
+                                            </small>
+
+                                            {% if rental.status == 'Active' %}
+
+                                                <a href="{% url 'mark_as_returned' rental.id %}"
+                                                   class="btn btn-outline-brown btn-sm mt-2">
+                                                    Mark Returned
+                                                </a>
+
+                                            {% endif %}
+
+                                        </div>
+
+                                    {% endif %}
+
+                                {% endfor %}
+
+                            {% endif %}
+
+                            <div class="d-flex gap-2 mt-3">
+
+                                <a href="{% url 'edit_used_book' book.id %}"
+                                   class="btn btn-brown btn-sm">
+                                    Edit Listing
+                                </a>
+
+                                <a href="{% url 'chat' book.id %}"
+                                   class="btn btn-outline-brown btn-sm">
+                                    💬 Chat
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="text-center py-5"
+             style="
+                background: #faf7f2;
+                border-radius: 18px;
+             ">
+
+            <div style="font-size: 45px; margin-bottom: 12px;">
+                📚
+            </div>
+
+            <h5 style="
+                font-family: Georgia, serif;
+                color: #35161b;
+            ">
+                No listings yet
+            </h5>
+
+            <p class="text-muted">
+                Add a used book to sell or rent it through BookNest.
+            </p>
+
+            <a href="{% url 'add_used_book' %}"
+               class="btn btn-brown">
+                Add Your First Book
+            </a>
+
+        </div>
+
+    {% endif %}
+
+</div>
+
+    <!-- Purchase History -->
+<!-- Purchase History -->
+<div class="mb-5">
+
+    <div class="mb-4">
+        <p style="
+            color: #9b6f2f;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        ">
+            YOUR ORDERS
+        </p>
+
+        <h3 style="
+            font-family: Georgia, serif;
+            color: #35161b;
+            margin: 0;
+        ">
+            Purchase History
+        </h3>
+    </div>
+
+    {% if orders %}
+
+        {% for order in orders %}
+
+            <div class="card border-0 shadow-sm mb-4"
+                 style="
+                    border-radius: 18px;
+                    overflow: hidden;
+                 ">
+
+                <!-- Order Header -->
+                <div style="
+                    background: #35161b;
+                    color: white;
+                    padding: 18px 24px;
+                ">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+
+                        <div>
+                            <strong>
+                                Order #{{ order.id }}
+                            </strong>
+
+                            <small class="d-block"
+                                   style="opacity: 0.75;">
+                                {{ order.created_at|date:"d M Y, h:i A" }}
+                            </small>
+                        </div>
+
+                        <span style="
+                            background: #f0e0d0;
+                            color: #35161b;
+                            padding: 6px 12px;
+                            border-radius: 20px;
+                            font-size: 12px;
+                            font-weight: 600;
+                        ">
+                            {{ order.status }}
+                        </span>
+
+                    </div>
+                </div>
+
+                <!-- Order Items -->
+                <div class="card-body p-4">
+
+                    {% for item in order.orderitem_set.all %}
+
+                        <div class="d-flex align-items-center gap-3
+                                    {% if not forloop.last %}pb-3 mb-3 border-bottom{% endif %}">
+
+                            <div style="
+                                width: 65px;
+                                height: 80px;
+                                flex-shrink: 0;
+                                background: #faf7f2;
+                                border-radius: 8px;
+                                overflow: hidden;
+                            ">
+                                <img src="{{ item.book.image }}"
+                                     alt="{{ item.book.title }}"
+                                     style="
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                     ">
+                            </div>
+
+                            <div class="flex-grow-1">
+
+                                <h6 style="
+                                    color: #35161b;
+                                    margin-bottom: 4px;
+                                    font-weight: 600;
+                                ">
+                                    {{ item.book.title }}
+                                </h6>
+
+                                <small class="text-muted">
+                                    Quantity: {{ item.quantity }}
+                                </small>
+
+                            </div>
+
+                            <div class="text-end">
+                                <strong style="color: #35161b;">
+                                    ₹{{ item.price }}
+                                </strong>
+                            </div>
+
+                        </div>
+
+                    {% endfor %}
+
+                    <!-- Order Total -->
+                    <div class="d-flex justify-content-between align-items-center
+                                mt-4 pt-3 border-top">
+
+                        <span class="text-muted">
+                            Order Total
+                        </span>
+
+                        <strong style="
+                            color: #7a1f2b;
+                            font-size: 20px;
+                        ">
+                            ₹{{ order.total_amount }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="text-center py-5"
+             style="
+                background: #faf7f2;
+                border-radius: 18px;
+             ">
+
+            <div style="font-size: 45px; margin-bottom: 12px;">
+                🛍️
+            </div>
+
+            <h5 style="
+                font-family: Georgia, serif;
+                color: #35161b;
+            ">
+                No purchases yet
+            </h5>
+
+            <p class="text-muted">
+                Your completed orders will appear here.
+            </p>
+
+            <a href="{% url 'books' %}"
+               class="btn btn-brown">
+                Browse Books
+            </a>
+
+        </div>
+
+    {% endif %}
+
+</div>
+        <!--My Rentals-->
+   <!-- My Rentals -->
+<div class="mb-5">
+
+    <div class="mb-4">
+        <p style="
+            color: #9b6f2f;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        ">
+            BORROWED BOOKS
+        </p>
+
+        <h3 style="
+            font-family: Georgia, serif;
+            color: #35161b;
+            margin: 0;
+        ">
+            My Rentals
+        </h3>
+    </div>
+
+    {% if rentals %}
+
+        <div class="row g-4">
+
+            {% for rental in rentals %}
+
+                <div class="col-md-6">
+
+                    <div class="card border-0 shadow-sm h-100"
+                         style="
+                            border-radius: 18px;
+                            overflow: hidden;
+                         ">
+
+                        <div class="card-body p-4">
+
+                            <div class="d-flex justify-content-between
+                                        align-items-start mb-3">
+
+                                <div>
+                                    <h5 style="
+                                        font-family: Georgia, serif;
+                                        color: #35161b;
+                                        margin-bottom: 5px;
+                                    ">
+                                        {{ rental.used_book.title }}
+                                    </h5>
+
+                                    <p class="text-muted small mb-0">
+                                        by {{ rental.used_book.author }}
+                                    </p>
+                                </div>
+
+                                {% if rental.status == 'Active' %}
+
+                                    <span style="
+                                        background: #e7f4e8;
+                                        color: #28733c;
+                                        padding: 6px 11px;
+                                        border-radius: 20px;
+                                        font-size: 11px;
+                                        font-weight: 600;
+                                    ">
+                                        Active
+                                    </span>
+
+                                {% else %}
+
+                                    <span style="
+                                        background: #f0e0d0;
+                                        color: #6b4638;
+                                        padding: 6px 11px;
+                                        border-radius: 20px;
+                                        font-size: 11px;
+                                        font-weight: 600;
+                                    ">
+                                        Returned
+                                    </span>
+
+                                {% endif %}
+
+                            </div>
+
+                            <div style="
+                                background: #faf7f2;
+                                border-radius: 12px;
+                                padding: 15px;
+                            ">
+
+                                <div class="row g-3">
+
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">
+                                            Rental Price
+                                        </small>
+
+                                        <strong style="color: #35161b;">
+                                            ₹{{ rental.price }}
+                                        </strong>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">
+                                            Rental Date
+                                        </small>
+
+                                        <strong style="color: #35161b;">
+                                            {{ rental.rental_date|date:"d M Y" }}
+                                        </strong>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">
+                                            Return Date
+                                        </small>
+
+                                        <strong style="color: #35161b;">
+                                            {{ rental.return_date|date:"d M Y" }}
+                                        </strong>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">
+                                            Owner
+                                        </small>
+
+                                        <strong style="color: #35161b;">
+                                            {{ rental.used_book.seller.username }}
+                                        </strong>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            {% if rental.status == 'Active' %}
+
+                                <a href="{% url 'chat' rental.used_book.id %}"
+                                   class="btn btn-outline-brown btn-sm mt-3">
+                                    💬 Contact Owner
+                                </a>
+
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="text-center py-5"
+             style="
+                background: #faf7f2;
+                border-radius: 18px;
+             ">
+
+            <div style="font-size: 45px; margin-bottom: 12px;">
+                📖
+            </div>
+
+            <h5 style="
+                font-family: Georgia, serif;
+                color: #35161b;
+            ">
+                No rentals yet
+            </h5>
+
+            <p class="text-muted">
+                Books you rent from other readers will appear here.
+            </p>
+
+            <a href="{% url 'used_books' %}"
+               class="btn btn-brown">
+                Browse Used Books
+            </a>
+
+        </div>
+
+    {% endif %}
+
+</div>
+        <!-- Messages -->
+<div class="mb-4">
+
+    <div class="mb-4">
+        <p style="
+            color: #9b6f2f;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        ">
+            COMMUNICATIONS
+        </p>
+
+        <h3 style="
+            font-family: Georgia, serif;
+            color: #35161b;
+            margin: 0;
+        ">
+            Messages
+        </h3>
+    </div>
+
+    {% if conversations %}
+
+        <div class="row g-4">
+
+            {% for message in conversations %}
+
+                <div class="col-md-6">
+
+                    <div class="card border-0 shadow-sm h-100"
+                         style="
+                            border-radius: 18px;
+                            overflow: hidden;
+                         ">
+
+                        <div class="card-body p-4">
+
+                            <div class="d-flex align-items-center
+                                        justify-content-between mb-3">
+
+                                <div class="d-flex align-items-center gap-3">
+
+                                    <div style="
+                                        width: 48px;
+                                        height: 48px;
+                                        border-radius: 50%;
+                                        background: #f0e0d0;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        font-size: 22px;
+                                    ">
+                                        💬
+                                    </div>
+
+                                    <div>
+                                        <h6 style="
+                                            color: #35161b;
+                                            margin-bottom: 3px;
+                                            font-weight: 600;
+                                        ">
+                                            {{ message.book.title }}
+                                        </h6>
+
+                                        <small class="text-muted">
+                                            Conversation
+                                        </small>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div style="
+                                background: #faf7f2;
+                                border-radius: 12px;
+                                padding: 15px;
+                            ">
+
+                                <small class="text-muted d-block mb-1">
+                                    Latest message
+                                </small>
+
+                                <p style="
+                                    color: #35161b;
+                                    margin-bottom: 5px;
+                                ">
+                                    {{ message.message|truncatewords:20 }}
+                                </p>
+
+                                <small class="text-muted">
+                                    {{ message.sent_at|date:"d M Y, h:i A" }}
+                                </small>
+
+                            </div>
+
+                            <a href="{% url 'chat' message.book.id %}"
+                               class="btn btn-brown btn-sm mt-3">
+                                Open Conversation
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="text-center py-5"
+             style="
+                background: #faf7f2;
+                border-radius: 18px;
+             ">
+
+            <div style="font-size: 45px; margin-bottom: 12px;">
+                💬
+            </div>
+
+            <h5 style="
+                font-family: Georgia, serif;
+                color: #35161b;
+            ">
+                No messages yet
+            </h5>
+
+            <p class="text-muted">
+                Your conversations with other BookNest users will appear here.
+            </p>
+
+        </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

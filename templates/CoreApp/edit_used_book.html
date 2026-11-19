@@ -1,0 +1,109 @@
+{% extends 'CoreApp/base.html' %}
+
+{% block content %}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-7">
+
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4 p-md-5">
+
+                    <h2 class="mb-2">Edit Your Book</h2>
+                    <p class="text-muted mb-4">
+                        Update your book listing details.
+                    </p>
+
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label class="form-label">Book Title</label>
+                            <input type="text"
+                                   name="title"
+                                   class="form-control"
+                                   value="{{ book.title }}"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Author</label>
+                            <input type="text"
+                                   name="author"
+                                   class="form-control"
+                                   value="{{ book.author }}"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Category</label>
+                            <select name="category" class="form-select" required>
+                                <option value="Fiction" {% if book.category == "Fiction" %}selected{% endif %}>Fiction</option>
+                                <option value="Romance" {% if book.category == "Romance" %}selected{% endif %}>Romance</option>
+                                <option value="Education" {% if book.category == "Education" %}selected{% endif %}>Education</option>
+                                <option value="Business" {% if book.category == "Business" %}selected{% endif %}>Business</option>
+                                <option value="Other" {% if book.category == "Other" %}selected{% endif %}>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Condition</label>
+                            <select name="condition" class="form-select" required>
+                                <option value="Like New" {% if book.condition == "Like New" %}selected{% endif %}>Like New</option>
+                                <option value="Very Good" {% if book.condition == "Very Good" %}selected{% endif %}>Very Good</option>
+                                <option value="Good" {% if book.condition == "Good" %}selected{% endif %}>Good</option>
+                                <option value="Fair" {% if book.condition == "Fair" %}selected{% endif %}>Fair</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Price</label>
+                            <input type="number"
+                                   name="price"
+                                   class="form-control"
+                                   value="{{ book.price }}"
+                                   step="0.01"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Listing Type</label>
+                            <select name="listing_type" class="form-select" required>
+                                <option value="Sell" {% if book.listing_type == "Sell" %}selected{% endif %}>Sell</option>
+                                <option value="Rent" {% if book.listing_type == "Rent" %}selected{% endif %}>Rent</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <textarea name="description"
+                                      class="form-control"
+                                      rows="4"
+                                      required>{{ book.description }}</textarea>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label">Change Book Image</label>
+                            <input type="file"
+                                   name="image"
+                                   class="form-control"
+                                   accept="image/*">
+                            <small class="text-muted">
+                                Leave empty if you want to keep the current image.
+                            </small>
+                        </div>
+
+                        <button type="submit" class="btn btn-brown w-100">
+                            Save Changes
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

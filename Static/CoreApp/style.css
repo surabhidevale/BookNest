@@ -1,0 +1,2173 @@
+/* =========================================================
+   BOOKNEST - COMPLETE CUSTOM CSS
+   Navbar + Footer + Home + Books
+========================================================= */
+
+
+/* =========================================================
+   1. GENERAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333333;
+    background-color: #faf7f2;
+}
+
+a {
+    transition: 0.3s;
+}
+
+
+/* =========================================================
+   2. NAVBAR
+========================================================= */
+
+.booknest-navbar {
+    background-color: #ffffff;
+    padding: 18px 0;
+    border-bottom: 1px solid #eee5df;
+    position: relative;
+    z-index: 1000;
+}
+
+
+/* Logo */
+
+.booknest-logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    font-size: 29px;
+    font-weight: 700;
+
+    color: #7a1f2b !important;
+
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.booknest-logo span:last-child span {
+    color: #b08a4a;
+}
+
+.logo-icon {
+    font-size: 30px;
+}
+
+
+/* Navigation */
+
+.booknest-navbar .navbar-nav {
+    gap: 8px;
+}
+
+.booknest-navbar .nav-link {
+    position: relative;
+
+    color: #333333;
+    font-size: 15px;
+    font-weight: 500;
+
+    padding: 8px 15px !important;
+
+    transition: 0.3s;
+}
+
+
+/* Underline animation */
+
+.booknest-navbar .nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 15px;
+    right: 15px;
+    bottom: 2px;
+
+    height: 2px;
+
+    background-color: #7a1f2b;
+
+    transform: scaleX(0);
+    transform-origin: center;
+
+    transition: 0.3s;
+}
+
+.booknest-navbar .nav-link:hover {
+    color: #7a1f2b;
+}
+
+.booknest-navbar .nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* Navbar right side */
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.navbar-actions .btn-brown {
+    background-color: #6b4638;
+    color: white;
+    border: 1px solid #6b4638;
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.navbar-actions .btn-brown:hover {
+    background-color: #54352b;
+    color: white;
+}
+
+.navbar-actions .btn-outline-brown {
+    background-color: transparent;
+    color: #6b4638;
+    border: 1px solid #6b4638;
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.navbar-actions .btn-outline-brown:hover {
+    background-color: #6b4638;
+    color: white;
+}
+
+/* Cart */
+
+.cart-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    color: #333333;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.cart-link:hover {
+    color: #7a1f2b;
+}
+
+
+/* Login button */
+
+.login-btn {
+    display: inline-block;
+
+    background-color: #7a1f2b;
+    color: #ffffff;
+
+    padding: 10px 23px;
+
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    box-shadow: 0 5px 15px rgba(122, 31, 43, 0.18);
+
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #5f1721;
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(122, 31, 43, 0.25);
+}
+
+
+/* =========================================================
+   3. HOME - HERO
+========================================================= */
+
+.hero-section {
+    padding: 95px 0 90px;
+    background-color: #faf7f2;
+    overflow: hidden;
+}
+
+.hero-content {
+    padding-right: 30px;
+}
+
+.hero-label {
+    color: #9b6f2f;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.hero-section h1 {
+    font-family: Georgia, serif;
+    font-size: 62px;
+    line-height: 1.08;
+    font-weight: 700;
+    color: #35161b;
+    margin-bottom: 25px;
+}
+
+.hero-section h1 span {
+    color: #7a1f2b;
+    display: block;
+}
+
+.hero-description {
+    color: #6f6662;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 520px;
+}
+
+
+/* Hero buttons */
+
+.hero-buttons {
+    margin-top: 32px;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+    padding: 13px 26px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background-color: #7a1f2b;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(122, 31, 43, 0.18);
+}
+
+.primary-btn:hover {
+    background-color: #5f1721;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    border: 1px solid #cdbdb5;
+    color: #7a1f2b;
+    margin-left: 8px;
+}
+
+.secondary-btn:hover {
+    background-color: #7a1f2b;
+    color: #ffffff;
+}
+
+
+/* Hero statistics */
+
+.hero-stats {
+    display: flex;
+    gap: 38px;
+    margin-top: 45px;
+}
+
+.hero-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-stat strong {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    color: #35161b;
+}
+
+.hero-stat span {
+    color: #8a817d;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+
+/* Hero image */
+
+.hero-image-wrapper {
+    position: relative;
+    width: 90%;
+    margin-left: auto;
+}
+
+.hero-image-background {
+    position: absolute;
+
+    width: 85%;
+    height: 100%;
+
+    background-color: #eadbd0;
+
+    border-radius: 180px 180px 15px 15px;
+
+    right: -20px;
+    top: 25px;
+}
+
+.hero-image {
+    position: relative;
+
+    width: 100%;
+    height: 520px;
+
+    object-fit: cover;
+
+    border-radius: 180px 180px 15px 15px;
+
+    box-shadow: 0 20px 45px rgba(53, 22, 27, 0.15);
+}
+
+
+/* Floating card */
+
+.floating-card {
+    position: absolute;
+
+    left: -35px;
+    bottom: 35px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background-color: #ffffff;
+
+    padding: 15px 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.floating-icon {
+    font-size: 28px;
+}
+
+.floating-card strong {
+    display: block;
+
+    color: #35161b;
+    font-size: 14px;
+}
+
+.floating-card small {
+    color: #888888;
+}
+
+
+/* =========================================================
+   4. COMMON SECTION HEADING
+========================================================= */
+
+.section-heading {
+    margin-bottom: 45px;
+}
+
+.section-heading p {
+    color: #9b6f2f;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+
+    margin-bottom: 8px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, serif;
+
+    color: #35161b;
+
+    font-size: 38px;
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+.section-heading span {
+    color: #7d7470;
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   5. HOME - CATEGORIES
+========================================================= */
+
+.categories-section {
+    padding: 90px 0;
+    background-color: #ffffff;
+}
+
+.category-card {
+    display: block;
+
+    height: 100%;
+
+    padding: 30px 25px;
+
+    background-color: #faf7f2;
+
+    border: 1px solid #eee5df;
+    border-radius: 12px;
+
+    text-decoration: none;
+    color: inherit;
+
+    transition: 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 15px 30px rgba(53, 22, 27, 0.08);
+
+    border-color: #d9c1b5;
+}
+
+.category-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #f1e3dc;
+
+    border-radius: 50%;
+
+    font-size: 27px;
+
+    margin-bottom: 22px;
+}
+
+.category-card h4 {
+    font-family: Georgia, serif;
+
+    color: #35161b;
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+.category-card p {
+    color: #777777;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+.category-arrow {
+    color: #7a1f2b;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   6. HOME - FEATURED BOOKS
+========================================================= */
+
+.featured-section {
+    padding: 90px 0;
+    background-color: #faf7f2;
+}
+
+.featured-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: end;
+}
+
+.view-all-btn {
+    color: #7a1f2b;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    font-size: 14px;
+}
+
+.view-all-btn:hover {
+    color: #5f1721;
+}
+
+
+/* =========================================================
+   7. SHARED BOOK CARD
+========================================================= */
+
+.book-card {
+    background-color: #ffffff;
+
+    border: 1px solid #eee5df;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    height: 100%;
+
+    transition: 0.3s;
+}
+
+.book-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 15px 35px rgba(53, 22, 27, 0.10);
+}
+
+
+/* Book image */
+
+.book-image-wrapper {
+    position: relative;
+     height: 235px;
+    overflow: hidden;
+}
+
+.book-card img {
+    width: 100%;
+
+    height: 290px;
+
+    object-fit: cover;
+
+    transition: 0.4s;
+}
+
+.book-card:hover img {
+    transform: scale(1.04);
+}
+
+
+/* Badge */
+
+.book-badge {
+    position: absolute;
+
+    top: 14px;
+    left: 14px;
+
+    background-color: #ffffff;
+
+    color: #7a1f2b;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* Book body */
+
+.book-card-body {
+    padding: 20px;
+}
+
+.book-category {
+    display: inline-block;
+
+    color: #9b6f2f;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+}
+
+.book-card-body h4 {
+    font-family: Georgia, serif;
+
+    color: #35161b;
+
+    font-size: 19px;
+
+    margin-bottom: 5px;
+}
+
+.book-author {
+    color: #888888;
+
+    font-size: 13px;
+}
+
+.book-card-body > p {
+    margin-bottom: 0;
+}
+
+
+/* Price + button */
+
+.book-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 18px;
+}
+
+.book-bottom strong {
+    color: #7a1f2b;
+
+    font-size: 19px;
+}
+
+.small-btn {
+    background-color: #7a1f2b;
+
+    color: #ffffff;
+
+    padding: 7px 14px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.small-btn:hover {
+    background-color: #5f1721;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   8. BOOKS PAGE HEADER
+========================================================= */
+
+.books-header {
+    padding: 70px 0;
+
+    background-color: #f3ebe2;
+}
+
+.books-header h1 {
+    font-family: Georgia, serif;
+
+    color: #35161b;
+
+    font-size: 44px;
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+.books-header p:last-child {
+    color: #777777;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   9. BOOKS PAGE
+========================================================= */
+
+.books-section {
+    padding: 70px 0;
+
+    background-color: #faf7f2;
+}
+
+
+/* Categories */
+
+.book-categories {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-bottom: 45px;
+}
+
+.category-filter {
+    background-color: #ffffff;
+
+    border: 1px solid #dddddd;
+
+    color: #444444;
+
+    padding: 9px 22px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.category-filter:hover,
+.category-filter.active {
+    background-color: #7a1f2b;
+
+    border-color: #7a1f2b;
+
+    color: #ffffff;
+}
+
+
+/* Books page image */
+
+.books-section .book-card img {
+    height: 310px;
+}
+
+
+/* =========================================================
+   10. WHY BOOKNEST
+========================================================= */
+
+.why-section {
+    padding: 90px 0;
+
+    background-color: #ffffff;
+}
+
+.why-card {
+    text-align: center;
+
+    padding: 35px 25px;
+
+    border: 1px solid #eee5df;
+
+    border-radius: 12px;
+
+    height: 100%;
+
+    transition: 0.3s;
+}
+
+.why-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 12px 25px rgba(53, 22, 27, 0.07);
+}
+
+.why-icon {
+    font-size: 38px;
+
+    margin-bottom: 18px;
+}
+
+.why-card h4 {
+    font-family: Georgia, serif;
+
+    color: #35161b;
+
+    margin-bottom: 12px;
+}
+
+.why-card p {
+    color: #777777;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   11. HOME CTA
+========================================================= */
+
+.home-cta {
+    padding: 0 0 90px;
+
+    background-color: #ffffff;
+}
+
+.cta-box {
+    background-color: #35161b;
+
+    color: #ffffff;
+
+    padding: 50px 55px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.cta-box p {
+    color: #d5b16a;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.cta-box h2 {
+    font-family: Georgia, serif;
+
+    font-size: 32px;
+
+    line-height: 1.3;
+
+    margin: 0;
+}
+
+.cta-btn {
+    flex-shrink: 0;
+
+    background-color: #ffffff;
+
+    color: #7a1f2b;
+
+    padding: 12px 22px;
+
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #f1e3dc;
+
+    color: #5f1721;
+}
+
+
+/* =========================================================
+   12. FOOTER
+========================================================= */
+
+.booknest-footer {
+    background-color: #35161b;
+
+    color: #ffffff;
+
+    padding: 65px 0 25px;
+
+    margin-top: 0;
+}
+
+.booknest-footer h4 {
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+}
+
+.booknest-footer p {
+    color: #d9c9c6;
+}
+
+.footer-links {
+    margin: 30px 0;
+}
+
+.footer-links a {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    margin: 0 15px;
+
+    font-size: 15px;
+}
+
+.footer-links a:hover {
+    color: #d5b16a;
+}
+
+.booknest-footer hr {
+    border: 0;
+
+    border-top: 1px solid #5b393e;
+
+    margin: 35px 0 25px;
+}
+
+.copyright {
+    font-size: 13px;
+
+    color: #bda9a6 !important;
+}
+
+
+/* =========================================================
+   13. RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    /* Navbar */
+
+    .booknest-navbar .navbar-nav {
+        margin-top: 20px;
+
+        gap: 3px;
+    }
+
+    .booknest-navbar .nav-link {
+        padding: 10px 0 !important;
+    }
+
+    .booknest-navbar .nav-link::after {
+        display: none;
+    }
+
+    .navbar-actions {
+        margin-top: 15px;
+
+        padding-bottom: 10px;
+    }
+
+
+    /* Hero */
+
+    .hero-section {
+        padding: 65px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 48px;
+    }
+
+    .hero-image-wrapper {
+        width: 100%;
+
+        margin-top: 60px;
+    }
+
+
+    /* Featured */
+
+    .featured-top {
+        align-items: start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    /* CTA */
+
+    .cta-box {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+/* =========================================================
+   14. RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    /* Hero */
+
+    .hero-section h1 {
+        font-size: 40px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-stats {
+        gap: 20px;
+    }
+
+    .hero-stat strong {
+        font-size: 20px;
+    }
+
+
+    /* Hero image */
+
+    .hero-image {
+        height: 400px;
+
+        border-radius: 120px 120px 15px 15px;
+    }
+
+    .hero-image-background {
+        border-radius: 120px 120px 15px 15px;
+    }
+
+    .floating-card {
+        left: 10px;
+
+        bottom: 20px;
+    }
+
+
+    /* Section headings */
+
+    .section-heading h2 {
+        font-size: 31px;
+    }
+
+
+    /* Buttons */
+
+    .secondary-btn {
+        margin-left: 0;
+
+        margin-top: 10px;
+    }
+
+
+    /* CTA */
+
+    .cta-box {
+        padding: 35px 25px;
+    }
+
+    .cta-box h2 {
+        font-size: 26px;
+    }
+
+
+    /* Footer */
+
+    .footer-links a {
+        display: inline-block;
+
+        margin: 7px 10px;
+    }
+
+}
+.book-filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 35px 0 45px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    border: 1px solid #d8c9c0;
+    background: white;
+    color: #5b4036;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #6b4638;
+    color: white;
+}
+button.filter-btn {
+    background-color: #6b4638 !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 22px !important;
+    border-radius: 25px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+}
+.btn-brown {
+    background-color: #6b4638;
+    color: white;
+    border: 1px solid #6b4638;
+}
+
+.btn-brown:hover {
+    background-color: #54352b;
+    color: white;
+}
+
+.btn-outline-brown {
+    background-color: transparent;
+    color: #6b4638;
+    border: 1px solid #6b4638;
+}
+
+.btn-outline-brown:hover {
+    background-color: #6b4638;
+    color: white;
+}
+.quantity-btn {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #6b4638;
+    color: #6b4638;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.quantity-btn:hover {
+    background-color: #6b4638;
+    color: white;
+}
+
+.quantity-number {
+    min-width: 40px;
+    text-align: center;
+    font-weight: 600;
+}
+
+
+
+
+
+/* =========================================================
+   BOOKNEST - FINAL HOME / STORE / FOOTER UI
+========================================================= */
+
+
+/* ================= NAVBAR ================= */
+
+.icon-nav-link,
+.account-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #333333;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.icon-nav-link:hover,
+.account-nav-link:hover {
+    color: #7a1f2b;
+}
+
+.icon-nav-link i,
+.account-nav-link i {
+    font-size: 18px;
+}
+
+
+/* ================= SMALLER BOOK CARDS ================= */
+
+.featured-section .book-card {
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(53, 22, 27, 0.06);
+}
+
+.featured-section .book-image-wrapper {
+    height: 235px;
+}
+
+.featured-section .book-card img {
+    height: 235px;
+    object-fit: cover;
+}
+
+.featured-section .book-card-body {
+    padding: 16px;
+}
+
+.featured-section .book-card-body h4 {
+    font-size: 17px;
+    line-height: 1.35;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.featured-section .book-author {
+    margin-bottom: 0;
+}
+
+.featured-section .book-bottom {
+    margin-top: 14px;
+}
+
+.featured-section .book-bottom strong {
+    font-size: 17px;
+}
+
+.featured-section .small-btn {
+    padding: 6px 12px;
+    font-size: 11px;
+}
+
+
+/* ================= PHYSICAL STORE ================= */
+
+.store-section {
+    padding: 95px 0;
+    background-color: #f3ebe2;
+}
+
+.store-content {
+    padding-left: 20px;
+}
+
+.store-label {
+    color: #9b6f2f;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    margin-bottom: 10px;
+}
+
+.store-content h2 {
+    font-family: Georgia, serif;
+    color: #35161b;
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.store-content > p {
+    color: #6f6662;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.store-photo {
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: #eadbd0;
+    box-shadow: 0 12px 30px rgba(53, 22, 27, 0.10);
+}
+
+.store-photo.large {
+    height: 430px;
+}
+
+.store-photo.small {
+    height: 205px;
+}
+
+.store-photo-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    color: #7a1f2b;
+    font-size: 45px;
+
+    background: linear-gradient(
+        135deg,
+        #f4e8df,
+        #eadbd0
+    );
+}
+
+.store-photo-placeholder span {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #8a817d;
+}
+
+
+/* Store feature list */
+
+.store-features {
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.store-feature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 17px;
+}
+
+.store-feature > span {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #ffffff;
+    border-radius: 50%;
+
+    font-size: 20px;
+
+    box-shadow: 0 4px 12px rgba(53, 22, 27, 0.07);
+}
+
+.store-feature strong {
+    display: block;
+    color: #35161b;
+    font-size: 14px;
+}
+
+.store-feature small {
+    display: block;
+    color: #817873;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+
+/* ================= NEW FOOTER ================= */
+
+.booknest-footer {
+    background-color: #35161b;
+    color: #ffffff;
+    padding: 70px 0 25px;
+}
+
+.booknest-footer h3 {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.booknest-footer h5 {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.booknest-footer p {
+    color: #d9c9c6;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.footer-brand p {
+    max-width: 330px;
+}
+
+
+/* Footer links */
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-list li {
+    margin-bottom: 11px;
+}
+
+.footer-list a {
+    color: #d9c9c6;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-list a:hover {
+    color: #d5b16a;
+    padding-left: 4px;
+}
+
+
+/* Social icons */
+
+.footer-social {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.footer-social a {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #65464a;
+    border-radius: 50%;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    background-color: #ffffff;
+    color: #7a1f2b;
+    transform: translateY(-3px);
+}
+
+
+/* Store information */
+
+.store-text {
+    max-width: 350px;
+}
+
+.booknest-footer i {
+    margin-right: 7px;
+    color: #d5b16a;
+}
+
+.footer-placeholder {
+    color: #a99692;
+    font-size: 13px;
+}
+
+
+/* Footer divider */
+
+.footer-divider {
+    border: 0;
+    border-top: 1px solid #5b393e;
+    margin: 45px 0 22px;
+}
+
+
+/* Footer bottom */
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 12px;
+    color: #bda9a6;
+}
+
+
+/* ================= HOME MOBILE ================= */
+
+@media (max-width: 991px) {
+
+    .store-content {
+        padding-left: 0;
+    }
+
+    .store-photo.large {
+        height: 350px;
+    }
+
+    .store-photo.small {
+        height: 167px;
+    }
+
+    .navbar-actions {
+        flex-wrap: wrap;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .featured-section .book-image-wrapper,
+    .featured-section .book-card img {
+        height: 190px;
+    }
+
+    .featured-section .book-card-body {
+        padding: 13px;
+    }
+
+    .featured-section .book-card-body h4 {
+        font-size: 15px;
+    }
+
+    .featured-section .book-bottom strong {
+        font-size: 15px;
+    }
+
+    .featured-section .small-btn {
+        padding: 5px 9px;
+    }
+
+    .store-section {
+        padding: 65px 0;
+    }
+
+    .store-content h2 {
+        font-size: 31px;
+    }
+
+    .store-photo.large {
+        height: 280px;
+    }
+
+    .store-photo.small {
+        height: 133px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+/* =========================================
+   PHYSICAL BOOKSTORE SECTION
+   ========================================= */
+
+.store-section {
+    padding: 80px 0;
+    background: #faf7f2;
+}
+
+.store-content {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+.store-photo {
+    flex: 1;
+    min-height: 420px;
+}
+
+.store-photo-placeholder {
+    width: 100%;
+    height: 420px;
+    border-radius: 24px;
+    background: #e8d8c8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #6b4638;
+    font-size: 20px;
+    font-weight: 600;
+    box-shadow: 0 15px 35px rgba(53, 22, 27, 0.12);
+    border: 1px solid #dcc8b7;
+}
+
+.store-photo-placeholder::before {
+    content: "📚";
+    display: block;
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+
+.store-content > div:last-child {
+    flex: 1;
+}
+
+.store-content h2 {
+    color: #35161b;
+    font-size: 42px;
+    line-height: 1.2;
+    margin: 10px 0 20px;
+}
+
+.store-content p {
+    color: #6b4638;
+    line-height: 1.8;
+}
+
+.store-features {
+    margin-top: 30px;
+}
+
+.store-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.store-feature-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 50%;
+    background: #f0e0d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.store-feature strong {
+    display: block;
+    color: #35161b;
+    margin-bottom: 3px;
+}
+
+.store-feature span {
+    color: #6b4638;
+    font-size: 14px;
+}
+
+.store-content .btn {
+    margin-top: 15px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .store-section {
+        padding: 55px 20px;
+    }
+
+    .store-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .store-photo {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .store-photo-placeholder {
+        height: 300px;
+    }
+
+    .store-content h2 {
+        font-size: 32px;
+    }
+}
+/* =========================================
+   FIX BOOKSTORE SECTION WIDTH
+   ========================================= */
+
+.store-section {
+    width: 100%;
+    overflow: hidden;
+}
+
+.store-section .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.store-content {
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 50px;
+    align-items: center;
+}
+
+.store-content > * {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.store-photo {
+    width: 100%;
+    min-width: 0;
+}
+
+.store-photo-placeholder {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.store-content p,
+.store-content h2,
+.store-content h3,
+.store-content div {
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+/* Keep the feature area inside the right column */
+.store-features {
+    width: 100%;
+    max-width: 100%;
+}
+
+.store-feature {
+    max-width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .store-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .store-photo-placeholder {
+        height: 320px;
+    }
+}
+/* =========================================
+   ABOUT PAGE
+   ========================================= */
+
+.about-hero {
+    padding: 90px 0 80px;
+    background: #faf7f2;
+}
+
+.about-label,
+.section-label {
+    display: inline-block;
+    color: #9b6f2f;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.about-hero h1 {
+    color: #35161b;
+    font-size: 52px;
+    line-height: 1.15;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.about-hero h1 span,
+.about-section h2 span,
+.about-why h2 span {
+    color: #7a1f2b;
+}
+
+.about-hero p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #6b4638;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+/* About Story */
+
+.about-section {
+    padding: 90px 0;
+    background: #ffffff;
+}
+
+.about-image-box {
+    min-height: 390px;
+    border-radius: 24px;
+    background: #f0e0d0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(53, 22, 27, 0.08);
+}
+
+.about-book-icon {
+    font-size: 75px;
+    margin-bottom: 20px;
+}
+
+.about-image-box h3 {
+    color: #35161b;
+    font-weight: 700;
+}
+
+.about-image-box p {
+    color: #6b4638;
+    max-width: 380px;
+}
+
+.about-section h2,
+.about-why h2 {
+    color: #35161b;
+    font-size: 42px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.about-section p {
+    color: #6b4638;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+
+/* What We Offer */
+
+.about-offers {
+    padding: 90px 0;
+    background: #faf7f2;
+}
+
+.about-offers h2 {
+    color: #35161b;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.about-offers > .container > .text-center > p {
+    color: #6b4638;
+}
+
+.about-feature-card {
+    height: 100%;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 30px 25px;
+    text-align: center;
+    border: 1px solid #eee2d8;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(53, 22, 27, 0.10);
+}
+
+.about-feature-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: #f0e0d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.about-feature-card h4 {
+    color: #35161b;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.about-feature-card p {
+    color: #6b4638;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+
+/* Why BookNest */
+
+.about-why {
+    padding: 90px 0;
+    background: #ffffff;
+}
+
+.about-points {
+    margin-top: 30px;
+}
+
+.about-point {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.about-point > span {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 50%;
+    background: #f0e0d0;
+    color: #7a1f2b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.about-point strong {
+    display: block;
+    color: #35161b;
+    margin-bottom: 5px;
+}
+
+.about-point p {
+    color: #6b4638;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.about-quote {
+    background: #35161b;
+    color: white;
+    border-radius: 24px;
+    padding: 45px 35px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(53, 22, 27, 0.15);
+}
+
+.quote-icon {
+    font-size: 55px;
+    color: #d5aa70;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.about-quote h3 {
+    font-size: 27px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.about-quote p {
+    color: #e6d6c9;
+}
+
+.quote-book {
+    font-size: 35px;
+    margin-top: 25px;
+}
+
+
+/* About CTA */
+
+.about-cta {
+    padding: 80px 20px;
+    background: #7a1f2b;
+    color: white;
+}
+
+.about-cta > .container > span {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #e5c9a8;
+}
+
+.about-cta h2 {
+    font-size: 42px;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.about-cta p {
+    color: #f1dddd;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .about-hero {
+        padding: 65px 20px;
+    }
+
+    .about-hero h1 {
+        font-size: 38px;
+    }
+
+    .about-section,
+    .about-offers,
+    .about-why {
+        padding: 60px 20px;
+    }
+
+    .about-section h2,
+    .about-why h2,
+    .about-offers h2 {
+        font-size: 32px;
+    }
+
+    .about-image-box {
+        min-height: 390px;
+    }
+
+    .about-cta h2 {
+        font-size: 32px;
+    }
+
+    .about-cta .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0 !important;
+    }
+}
+.store-main-image {
+    width: 100%;
+    height: 420px;
+    object-fit: contain;
+    display: block;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(53, 22, 27, 0.12);
+}
+
+@media (max-width: 768px) {
+    .store-main-image {
+        height: 300px;
+    }
+}
+/* =========================================================
+   ABOUT PAGE - FIX
+========================================================= */
+
+.about-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.about-section > .container > div {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-section > .container > div > div:first-child {
+    flex: 1;
+}
+
+.about-section > .container > div > div:last-child {
+    flex: 1;
+}
+
+/* About image */
+.about-section img.about-main-image {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    display: block;
+    border-radius: 24px;
+}
+
+/* About text */
+.about-section .section-label {
+    display: block;
+    color: #9b6f2f;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    letter-spacing: 2.5px;
+    margin-bottom: 12px;
+}
+
+.about-section h2 {
+    font-family: Georgia, serif;
+    font-size: 42px !important;
+    line-height: 1.15 !important;
+    font-weight: 700 !important;
+    color: #35161b;
+    margin-bottom: 25px;
+}
+
+.about-section h2 span {
+    color: #7a1f2b;
+}
+
+.about-section p {
+    color: #6f6662 !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 1.8 !important;
+    margin-bottom: 18px;
+}
+
+/* Mobile */
+@media (max-width: 991px) {
+    .about-section > .container > div {
+        flex-direction: column;
+    }
+
+    .about-section img.about-main-image {
+        height: 300px;
+    }
+
+    .about-section h2 {
+        font-size: 34px !important;
+    }
+}
