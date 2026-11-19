@@ -95,6 +95,20 @@ BookNest/
 
    `http://127.0.0.1:8000/`
 
+## Screenshots
+
+### Home Page
+![BookNest Homepage](screenshots/booknest-homepage.png)
+
+### Book Collection
+![Book Collection](screenshots/booknest-book_collection.png)
+
+### My Cart
+![My Cart](screenshots/booknest-mycart.png)
+
+### Used Books
+![Used Books](screenshots/booknes-usedbooks.png)
+
 ## Author
 
 **Surabhi Devale**
